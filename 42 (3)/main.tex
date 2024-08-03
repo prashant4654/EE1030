@@ -1,0 +1,208 @@
+%\iffalse
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+
+\title{Al1110 Probability and Random Variables }
+
+\author{}
+\date{}
+
+
+\begin{document}
+\maketitle
+Prashant Maurya , ee23btech11218
+
+Quiz 1-1 : Solutions
+
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+%\renewcommand{\theequation}{\theenumi}
+
+%\begin{abstract}
+%%\boldmath
+%In this letter, an algorithm for evaluating the exact analytical bit error rate  (BER)  for the piecewise linear (PL) combiner for  multiple relays is presented. Previous results were available only for upto three relays. The algorithm is unique in the sense that  the actual mathematical expressions, that are prohibitively large, need not be explicitly obtained. The diversity gain due to multiple relays is shown through plots of the analytical BER, well supported by simulations. 
+%
+%\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway.
+
+% Note that keywords are not normally used for peerreview papers.
+%\begin{IEEEkeywords}
+%Cooperative diversity, decode and forward, piecewise linear
+%\end{IEEEkeywords}
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+%\IEEEpeerreviewmaketitle	
+\textbf{Question 1:}
+A bag contains a certain number of bolts out of which some are 'defective' while the others are 'non-defective'. The probability of picking a 'non-defective' bolt is 300$\%$ more than picking a 'defective' bolt from the bag. On adding 80 more 'non-defective' bolts to the bag, the probability of picking a 'defective' bolt becomes 10$\%$. If two bolts are picked from the new bag with replacement, what is the probability that exactly one of the bolts is 'defective'?\\
+
+\textbf{Solution :} From the question,
+\begin{itemize}
+    \item Probability of picking a 'defective' bolt from new bag : \( \frac{1}{10} \)
+    \item Probability of picking a 'non-defective' bolt from new bag : \( \frac{9}{10} \)
+\end{itemize}
+Now, There will be two cases to get exactly one of the bolt 'defective' out of two from the new bag. 
+\begin{itemize}
+    \item First 'defective' and second 'non-defective'. Probability for this case : $\dfrac{1}{10} \times \dfrac{9}{10} =0.09 $ .
+    \item First 'non-defcetive' and second 'defective'. Probability for this case : $\dfrac{9}{10} \times \dfrac{1}{10} =0.09 $ .
+\end{itemize}
+Therefore , the probability that exactly one of the bolts is 'defective' is $0.18$ . 
+\\
+
+\textbf{Question 2:}
+If A and B are two independent events, then $P(A|B) = P(B)$.
+\begin{enumerate}[label = (\Alph*)]
+  \item True
+  \item False
+  \item True as long as both LHS and RHS are well defined   
+\end{enumerate}
+
+\textbf{Solution :}
+By the definition of conditional probability:
+
+\[
+P(A|B) = \frac{P(A \cap B)}{P(B)}
+\]
+
+If events $A$ and $B$ are independent, then:
+
+\[
+P(A \cap B) = P(A) \cdot P(B)
+\]
+
+So, substituting this into the equation for conditional probability:
+
+\[
+P(A|B) = \frac{P(A) \cdot P(B)}{P(B)}
+\]
+
+$P(B)$ cancels out, leaving us with:
+
+\[
+P(A|B) = P(A)
+\]
+
+Therefore, if $A$ and $B$ are two independent events, then $P(A|B) = P(A)$. \\
+Hence, The correct answer is $(B)$.\\
+\\
+
+\textbf{Question 3:} For events \(A\) and \(B\), and a probability \(P()\), which of the following need not be true:
+
+\begin{enumerate}[label =(\Alph*)]
+    \item \(P(A) \geq 0\)
+    \item \(P(A \cup B) = P(A) + P(B)\), for any \(A\) and \(B\)
+    \item \(P(A) + P(B) \leq 1\)
+    \item \(P(A) + P(B) \geq 1\)
+    \item \(P(A) \leq 1\)
+\end{enumerate}
+
+\textbf{Solution :}
+\begin{enumerate}[label=(\Alph*)]
+    \item \(P(A) \geq 0\) - This is always true since probabilities are non-negative.
+    \item \(P(A \cup B) = P(A) + P(B)\), for any \(A\) and \(B\) - This is not always true. It will be true if the events are mutually exclusive (i.e., \(A \cap B = \emptyset\)).
+    \item \(P(A) + P(B) \leq 1\) - We know that both P(A) and P(B) belong to [0,1] , then it is not necessarily that sum of them is less than 1.
+    \item \(P(A) + P(B) \geq 1\) - Same reason as in above option .
+    \item \(P(A) \leq 1\) - This is always true since probabilities cannot exceed 1.
+\end{enumerate}
+Hence, The correct answers are $(B), (C), (D).$
+\\
+
+\textbf{Question 4:} \text{Given (distinct) prime numbers } p \text{ and } q, \text{ what is the probability that } pq 
+\text{divides any given number } N?
+\begin{enumerate}[label= (\Alph*)]
+    \item $\frac{1}{p+q}$
+    \item $\frac{1}{p} + \frac{1}{q}$
+    \item $\frac{1}{pq}$
+    \item $p+q$
+\end{enumerate}
+
+\textbf{Solution :} \text{Let }p\text{ and }q\text{ be distinct prime numbers.}\\
+\text{The product }pq\text{ will be divisible by any number that}
+\text{contains either } p \text{ or } q \text{ as a factor, including } N. \text{The total number of possible values of }N\text{ is infinite,}\\
+\text{but for any given N,}\text{ the probability that }pq\text{ divides }N
+\text{ is the same.}\\
+\text{So, the probability that pq divides any given number}N\text{ is }$\frac{1}{pq}$.\\
+Hence, The correct answer is $(C)$.
+\\
+
+\textbf{Question 5:} One of the key factors for the success of streaming platforms such as Netflix, Hotstar, etc. are their recommendation features. These streaming platforms figure out the probability that a specific user will watch another movie, given that he has already watched a different movie. Suppose that a user has watched a movie "THE LION KING," on Hotstar. We are interested in the probability that the user watches another movie "BLACK PANTHER" given that he/she has watched "THE LION KING" using the following information:
+\begin{align*}
+    n & : \text{total number of viewers} \\
+    n_0 & : \text{viewers who have watched "THE LION KING"} \\
+    n_1 & : \text{viewers who have watched "BLACK PANTHER"} \\
+    n_2 & : \text{viewers who have watched both web-series}.
+\end{align*}
+
+Which of the following fits best as the answer to this question?
+
+\begin{enumerate}[label = (\Alph*)]
+    \item $\frac{n_1}{n_0}$
+    \item $\frac{n_2}{n_0}$
+    \item $\frac{n_2}{n_1 \times n_0}$
+    \item $\frac{n_1}{n_2 \times n_0}$
+\end{enumerate}
+
+\textbf{Solution :} We want to find the probability that a user watches "BLACK PANTHER" given that they have watched "THE LION KING." This can be represented as:
+
+\[ P(\text{"BLACK PANTHER"} | \text{"THE LION KING"}) = \frac{n_2}{n_0} \]
+
+Where:
+\begin{itemize}
+    \item \( n_2 \) represents the viewers who have watched both "THE LION KING" and "BLACK PANTHER."
+    \item \( n_0 \) represents the viewers who have watched "THE LION KING."
+\end{itemize}
+This choice best represents the probability of watching "BLACK PANTHER" given that the viewer has watched "THE LION KING."
+
+So, the correct answer is:
+$ (B) \; \dfrac{n_2}{n_0}$.
+\\
+
+\textbf{Question 6:} In a housing society, half of the families have a single child per family, while the remaining half have two children per family. A child is picked uniformly at random from the children in the society. The probability that this child has a sibling is \underline{\hspace{2cm}}.
+\begin{enumerate}[label =(\Alph*)]
+\item 0.66
+\item 0.066
+\item 0.5
+\item 0.055
+\end{enumerate}
+
+\textbf{Solution :} To solve the question, let's first analyze the given information:
+
+\begin{itemize}
+    \item Half of the families have a single child per family.
+    \item The remaining half have two children per family.
+\end{itemize}
+
+This implies that in half of the families, there's only one child, and in the other half, there are two children.
+
+Now, let's calculate the probability that a randomly picked child has a sibling:
+
+\begin{itemize}
+    \item Probability of picking a child from a family with a single child: \( \frac{1}{3} \)
+    \item Probability of picking a child from a family with two children: \( \frac{2}{3} \)
+\end{itemize}
+So, the overall probability that a randomly picked child has a sibling is the probability of picking a child from a family with two children, which is \( \frac{2}{3} \).
+
+Therefore, the correct answer is option $(A)$: \( 0.66 \).
+
+
+\end{document}
